@@ -1,0 +1,29 @@
+{
+  "name": "shop-zpw-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./src/server.ts",
+    "start": "nodemon ./src/server.js",
+    "prod": "npm run build && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matkluska/shop-zpw-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matkluska/shop-zpw-backend/issues"
+  },
+  "homepage": "https://github.com/matkluska/shop-zpw-backend#readme",
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
+    "nodemon": "^1.18.9"
+  }
+}
