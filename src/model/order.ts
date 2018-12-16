@@ -5,10 +5,6 @@ import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 export const OrderSchema = new Schema({
-    _id: {
-        type: String,
-        required: 'Enter an id'
-    },
     email: {
         type: String,
         required: 'Enter an email'
@@ -43,3 +39,10 @@ export const OrderSchema = new Schema({
     }
 });
 
+OrderSchema.set('toJSON', {
+    virtuals: true,
+    versionKey: false,
+    transform: function (doc, ret) {
+        delete ret._id
+    }
+});

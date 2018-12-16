@@ -6,11 +6,11 @@ export class ProductRoutes {
 
     public routes(app: Application): void {
 
-        app.route('/products')
+        app.route('/api/products')
             .get(this.productController.getProducts)
             .post(this.productController.addProduct);
 
-        app.route('/products/:productId')
+        app.route('/api/products/:productId')
             .get(this.productController.getProductWithId)
             .put(this.productController.updateProduct)
             .delete(this.productController.deleteProduct)

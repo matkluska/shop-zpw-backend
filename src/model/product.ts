@@ -3,10 +3,6 @@ import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 export const ProductSchema = new Schema({
-    _id: {
-        type: String,
-        required: 'Enter an id'
-    },
     name: {
         type: String,
         required: 'Enter a name'
@@ -31,3 +27,10 @@ export const ProductSchema = new Schema({
     }
 });
 
+ProductSchema.set('toJSON', {
+    virtuals: true,
+    versionKey: false,
+    transform: function (doc, ret) {
+        delete ret._id
+    }
+});
