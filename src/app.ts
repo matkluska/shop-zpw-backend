@@ -17,10 +17,13 @@ class App {
 
     constructor() {
         this.app = express();
+        this.config();
         this.productRoutes.routes(this.app);
         this.orderRoutes.routes(this.app);
         this.categoryRoutes.routes(this.app);
-        this.config();
+        this.app.route('*').get((req, res) => {
+            res.sendFile(path.resolve('public/index.html'));
+        });
         this.mongoSetup();
     }
 
@@ -34,9 +37,6 @@ class App {
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(express.static('public'));
         this.app.use(cors(corsOptions));
-        this.app.route('*').get((req, res) => {
-            res.sendFile(path.resolve('public/index.html'));
-        });
         this.app.use(function (req, res, next) {
 
             // Website you wish to allow to connect

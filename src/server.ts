@@ -1,7 +1,7 @@
 import app from "./app";
 import * as socketIo from "socket.io";
 
-const PORT = 3000;
+const PORT = 80;
 
 const server = app.listen(PORT, () => {
     console.log('Express server listening on port ' + PORT);
