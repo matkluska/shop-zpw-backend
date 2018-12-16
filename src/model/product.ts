@@ -24,6 +24,12 @@ export const ProductSchema = new Schema({
     },
     is_ready: {
         type: Boolean
+    },
+    discount_percent: {
+        type: Number
+    },
+    discount_end_time: {
+        type: Number
     }
 });
 
